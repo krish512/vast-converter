@@ -1,0 +1,48 @@
+[
+    {
+        "name": "sokil/php-vast",
+        "version": "0.4.4",
+        "version_normalized": "0.4.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sokil/php-vast.git",
+            "reference": "e8de746d0a1f83d5cda62ece05e49ef8930ccb14"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/sokil/php-vast/zipball/e8de746d0a1f83d5cda62ece05e49ef8930ccb14",
+            "reference": "e8de746d0a1f83d5cda62ece05e49ef8930ccb14",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^5.3|^7.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": ">=3.7.38 <6.0",
+            "satooshi/php-coveralls": ">=0.7.1 <2.0",
+            "squizlabs/php_codesniffer": "^2.3"
+        },
+        "time": "2018-01-25T16:07:11+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Sokil\\Vast\\": [
+                    "src/",
+                    "tests/"
+                ]
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Dmytro Sokil",
+                "email": "dmytro.sokil@gmail.com"
+            }
+        ],
+        "description": "Generator and parser for VAST documents"
+    }
+]
