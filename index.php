@@ -4,7 +4,9 @@ require_once 'vendor/autoload.php';
 
 $domain = "http://localhost";
 
-$URL = $domain."/www/delivery/fc.php?script=bannerTypeHtml:vastInlineBannerTypeHtml:vastInlineHtml&format=vast&nz=1&zones=pre-roll%3D".intval($_GET['zone']);
+$_GET['zone'] or die("<error>zone not passed</error>");
+
+$URL = $domain."/www/delivery/fc.php?script=bannerTypeHtml:vastInlineBannerTypeHtml:vastInlineHtml&format=vast&nz=1&zones=pre-roll%3D".intval($_GET['zone']."&".$_SERVER['QUERY_STRING']);
 
 $xml = simplexml_load_file($URL) or die("<error>Cannot create XML object</error>");
 
@@ -40,16 +42,6 @@ foreach($xml->Ad->InLine->TrackingEvents->Tracking as $TrackingEvent) {
         $linearCreative->addTrackingEvent($TrackingEvent["event"], $TrackingEvent->URL);
     }
 }
-    
-// // add 100x100 media file
-// $linearCreative
-//     ->createMediaFile()
-//     ->setProgressiveDelivery()
-//     ->setType('video/mp4')
-//     ->setHeight(100)
-//     ->setWidth(100)
-//     ->setBitrate(2500)
-//     ->setUrl('http://server.com/media1.mp4');
 
 // add 200x200 media file
 $linearCreative
