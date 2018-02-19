@@ -1,9 +1,12 @@
 <?php
+header('Content-Type: text/xml');
 require_once 'vendor/autoload.php';
-echo $_GET['zone'];
-$URL = "https://localhost/www/delivery/fc.php?script=bannerTypeHtml:vastInlineBannerTypeHtml:vastInlineHtml&format=vast&nz=1&zones=pre-roll%3D3";
 
-$xml = simplexml_load_file($URL) or die("Cannot create XML object");
+$domain = "http://localhost";
+
+$URL = $domain."/www/delivery/fc.php?script=bannerTypeHtml:vastInlineBannerTypeHtml:vastInlineHtml&format=vast&nz=1&zones=pre-roll%3D".intval($_GET['zone']);
+
+$xml = simplexml_load_file($URL) or die("<error>Cannot create XML object</error>");
 
 $factory = new \Sokil\Vast\Factory();
 $document = (new \Sokil\Vast\Factory())->create('2.0');
