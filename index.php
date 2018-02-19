@@ -41,15 +41,15 @@ foreach($xml->Ad->InLine->TrackingEvents->Tracking as $TrackingEvent) {
     }
 }
     
-// add 100x100 media file
-$linearCreative
-    ->createMediaFile()
-    ->setProgressiveDelivery()
-    ->setType('video/mp4')
-    ->setHeight(100)
-    ->setWidth(100)
-    ->setBitrate(2500)
-    ->setUrl('http://server.com/media1.mp4');
+// // add 100x100 media file
+// $linearCreative
+//     ->createMediaFile()
+//     ->setProgressiveDelivery()
+//     ->setType('video/mp4')
+//     ->setHeight(100)
+//     ->setWidth(100)
+//     ->setBitrate(2500)
+//     ->setUrl('http://server.com/media1.mp4');
 
 // add 200x200 media file
 $linearCreative
