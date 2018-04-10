@@ -28,7 +28,8 @@ $ad1 = $document
 // create creative for ad section
 $linearCreative = $ad1
     ->createLinearCreative()
-    ->setDuration($xml->Ad->InLine->Video->Duration);
+    ->setDuration($xml->Ad->InLine->Video->Duration)
+    ->setVideoClicksClickThrough($xml->Ad->InLine->Video->VideoClicks->ClickThrough->URL);
 
 foreach($xml->Ad->InLine->TrackingEvents->Tracking as $TrackingEvent) {
     if($TrackingEvent["event"] == "replay") {

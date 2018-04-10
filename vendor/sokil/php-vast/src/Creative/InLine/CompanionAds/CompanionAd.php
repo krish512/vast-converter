@@ -72,9 +72,7 @@ class CompanionAd extends CompanionAds
 
 
         $clickThrough = $this->getDomElement()->getElementsByTagName('CompanionClickThrough')->item(0);
-        $urlTag = $clickThrough->ownerDocument->createElement('URL');
-        $urlTag->appendChild($cdata);
-        $this->getDomElement()->getElementsByTagName('CompanionClickThrough')->item(0)->appendChild($urlTag);
+        $clickThrough->appendChild($cdata);
 
         return $this;
     }
